@@ -1,5 +1,5 @@
+# editorconfig.org
 root = true
-
 
 # General (for all files):
 #   * utf-8 character encoding
@@ -11,7 +11,6 @@ charset = utf-8
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
-
 
 # JSON: 2 space indentation
 [*.json]
