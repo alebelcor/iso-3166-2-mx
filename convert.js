@@ -10,6 +10,16 @@ var pkg = require('./package.json');
 var OUTPUT_DIR = 'converted';
 var ISO_3166_2_MX = 'https://en.wikipedia.org/wiki/ISO_3166-2:MX';
 
+function getValueFromElement(source, selector) {
+  var element = source.querySelector(selector);
+
+  if (element === null) {
+    throw new TypeError('Element was not found using selector: ' + selector);
+  }
+
+  return element.textContent;
+}
+
 function write(filename, data) {
   fs.writeFileSync(path.join(OUTPUT_DIR, filename), data, 'utf8');
 }
@@ -27,25 +37,9 @@ jsdom.env(ISO_3166_2_MX, function (err, window) {
   rows.shift();
 
   rows.forEach(function (element) {
-    var code = element.querySelector('td:first-child span');
-    var subdivisionName = element.querySelector('td:nth-child(2) a');
-    var subdivisionCategory = element.querySelector('td:nth-child(3)');
-
-    if (code === null) {
-      throw new TypeError('Code element was not found.');
-    }
-
-    if (subdivisionName === null) {
-      throw new TypeError('Subdivision name element was not found.');
-    }
-
-    if (subdivisionCategory === null) {
-      throw new TypeError('Subdivision category element was not found');
-    }
-
-    code = code.textContent;
-    subdivisionName = subdivisionName.textContent;
-    subdivisionCategory = subdivisionCategory.textContent;
+    var code = getValueFromElement(element, 'td:first-child span');
+    var subdivisionName = getValueFromElement(element, 'td:nth-child(2) a');
+    var subdivisionCategory = getValueFromElement(element, 'td:nth-child(3)');
 
     json.codes[code] = {
       'subdivisionName': subdivisionName,
