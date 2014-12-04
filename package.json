@@ -11,10 +11,10 @@
   "license": "MIT",
   "author": "Alejandro Beltrán",
   "files": [
-    "converted/iso-3166-2-mx.js"
+    "./converted/iso-3166-2-mx.js"
   ],
-  "main": "converted/iso-3166-2-mx.js",
-  "bin": "convert.js",
+  "main": "./converted/iso-3166-2-mx.js",
+  "bin": "./convert.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/alebelcor/iso-3166-2-mx.git"
