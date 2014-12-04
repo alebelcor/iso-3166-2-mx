@@ -1,0 +1,33 @@
+{
+  "name": "iso-3166-2-mx",
+  "version": "0.1.0",
+  "description": "The entry for Mexico in ISO 3166-2 which defines codes for the names of the principal subdivisions",
+  "keywords": [
+    "mexico",
+    "states",
+    "iso-3166",
+    "iso-3166-2"
+  ],
+  "license": "MIT",
+  "author": "Alejandro Beltrán",
+  "files": [
+    "converted/iso-3166-2-mx.js"
+  ],
+  "main": "converted/iso-3166-2-mx.js",
+  "bin": "convert.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alebelcor/iso-3166-2-mx.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "jsdom": "^1.3.2"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1",
+    "mocha-better-spec-reporter": "^1.1.1"
+  }
+}
