@@ -4,17 +4,18 @@
 
 var fs = require('fs');
 var path = require('path');
-var jsdom = require('jsdom');
 
+var jsdom = require('jsdom');
 var pkg = require('./package.json');
-var OUTPUT_DIR = 'converted';
+
+var OUTPUT_DIR = 'output';
 var ISO_3166_2_MX = 'https://en.wikipedia.org/wiki/ISO_3166-2:MX';
 
 function getValueFromElement(source, selector) {
   var element = source.querySelector(selector);
 
   if (element === null) {
-    throw new TypeError('Element was not found using selector: ' + selector);
+    throw new Error('Element was not found using selector: ' + selector);
   }
 
   return element.textContent;
@@ -25,9 +26,8 @@ function write(filename, data) {
 }
 
 jsdom.env(ISO_3166_2_MX, function (err, window) {
-
   if (err) {
-    return console.error(err);
+    throw err;
   }
 
   var json = {codes: {}};
@@ -49,5 +49,4 @@ jsdom.env(ISO_3166_2_MX, function (err, window) {
 
   write(pkg.name + '.json', JSON.stringify(json));
   write(pkg.name + '.js', 'module.exports=' + JSON.stringify(json) + ';');
-
 });
