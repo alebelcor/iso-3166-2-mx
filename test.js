@@ -1,9 +1,10 @@
 'use strict';
 
+var path = require('path');
 var expect = require('chai').expect;
 
-var pkg = require('./package.json');
-var iso31662mx = require('./output/' + pkg.name + '.js');
+var pkg = require(path.resolve('.', 'package.json'));
+var iso31662mx = require(path.resolve('.', 'output',  pkg.name));
 
 describe(pkg.name, function () {
   it('should be an object', function () {
