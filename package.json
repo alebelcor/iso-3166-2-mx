@@ -27,7 +27,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "generate": "node update.js"
+    "generate": "./update.js"
   },
   "dependencies": {
     "jsdom": "3.1.2"
