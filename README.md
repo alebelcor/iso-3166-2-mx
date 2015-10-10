@@ -13,16 +13,17 @@
 
 ## Getting started
 
-Even though all files are provided here, you might want to do it yourself.
+Even though all files are provided here, you might want to update them yourself.
 
-You'll need [Node.js](http://nodejs.org), then `cd` into this folder and `npm install`.
+You'll need [Node.js](https://nodejs.org), then `cd` into this folder and `npm install`.
 
 Run `npm run generate` to fetch the latest codes.
 
 You can also use it as a Node module. Just install it `npm install --save iso-3166-2-mx` and then require it in your code:
 
-```js
+```javascript
 var iso31662mx = require('iso-3166-2-mx');
+
 console.log(iso31662mx.codes['MX-DIF']);
 
 // {
