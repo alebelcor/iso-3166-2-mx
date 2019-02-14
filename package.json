@@ -1,6 +1,6 @@
 {
   "name": "iso-3166-2-mx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The entry for Mexico in ISO 3166-2 which defines codes for the names of the principal subdivisions",
   "keywords": [
     "mexico",
