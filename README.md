@@ -1,3 +1,11 @@
+# Deprecated
+
+![No Maintenance Intended](https://img.shields.io/maintenance/no/2019.svg)
+
+Use [`iso3166-2-db`](https://www.npmjs.com/package/iso3166-2-db) instead.
+
+- - -
+
 # iso-3166-2-mx
 
 > The entry for Mexico in ISO 3166-2 which defines codes for the names of the principal subdivisions
